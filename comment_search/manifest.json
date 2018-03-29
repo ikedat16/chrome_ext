@@ -1,0 +1,26 @@
+{
+  "name": "Google+ Comment Search",
+  "version": "1.0.0",
+  "description": "search comments which the specified user contributed on Google+.",
+  "background_page": "background.html",
+  "permissions": [
+    "tabs",
+    "background"
+  ],
+  "page_action": {
+    "default_icon": "gpcs19.png",
+    "default_title": "Do action",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://plus.google.com/*"],
+      "js" : ["jquery-1.7.1.min.js", "cts_comment_search.js"]
+    }
+  ],
+  "icons" : {
+    "48" : "gpcs48.png",
+    "128" : "gpcs128.png"
+  },
+  "options_page": "options.html"
+}

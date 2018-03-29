@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+<link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
+<script type="text/javascript">
+$(function(){
+	var bg = chrome.extension.getBackgroundPage();
+
+	$("#apikey").val(bg.getApikey());
+	$("#language").val(bg.getBrowserLang());
+	$("#color").val(bg.getUserBgColor());
+	
+	$('#colorpicker').farbtastic('#color');
+
+	$("#save").click(function() {
+		localStorage["apikey"] = $("#apikey").val();
+		localStorage["language"] = $("#language").val();
+		localStorage["user_bg_color"] = $("#color").val();
+	});
+
+});
+</script>
+<style>
+body {
+ font: normal 13px arial,sans-serif;
+ margin: 5%;
+}
+legend {
+ font-size: 120%;
+ color: #CC3333;
+}
+fieldset {
+ border: 1px ridge #FF9900;
+ border-image: initial;
+ margin: 1% 0%;
+}
+</style>
+</head>
+<body>
+
+<div id="options">
+	<fieldset>
+		<legend>&nbsp;search&nbsp;</legend>
+		<label for="apikey">API keyÅF</label>
+		<input type="text" id="apikey" name="API key" size="30" />
+		<a href="https://code.google.com/apis/console/#:quotas" target="_blank">create API key</a>&nbsp;(reflection of change needs to be OS rebooted.)
+		<br />
+		<label for="language">language codesÅF</label>
+		<input type="text" id="language" name="language codes" size="6" />
+		<a href="https://developers.google.com/+/api/search.html#available-languages" target="_blank">language codes</a>
+	</fieldset>
+	<fieldset>
+		<legend>&nbsp;highlite&nbsp;</legend>
+		<label for="color">BackgroundColorÅF</label>
+		<input type="text" id="color" name="color" />
+		<div id="colorpicker"></div>
+	</fieldset>
+
+</div>
+<hr />
+<input type="button" value="save" id="save" />
+
+</body>
+</html>
+

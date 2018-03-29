@@ -1,0 +1,97 @@
+
+
+html {
+ overflow-y: scroll;
+}
+
+body {
+ background-color: white;
+ font: normal 13px arial,sans-serif;
+ height: 100%;
+ margin: 1%;
+ visibility: visible;
+}
+
+
+.rslt_block {
+ border: 1px solid #DDD;
+ border-left: 1px solid #4D90F0;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ background-color: white;
+ clear: both;
+ font-size: 13px;
+ line-height: 1.4;
+ outline: none;
+ padding: 16px 21px;
+ position: relative;
+ word-wrap: break-word;
+}
+
+
+.activity {
+ margin-left: 60px;
+ margin-right: 44px;
+ vertical-align: top;
+ font-size: 13px;
+ line-height: 1.4;
+}
+
+.activity .prof_img {
+ border: 0;
+ float: left;
+ height: 48px;
+ margin-left: -60px;
+ width: 48px;
+ border-image: initial;
+}
+
+.name, .name a {
+ font-weight: bold;
+ text-decoration: none;
+ color: #36C;
+ cursor: pointer;
+}
+
+.time, .time a {
+ color: #999;
+}
+
+.activity > .content {
+ border-bottom: 1px solid #CCC;
+ border-left: 1px solid transparent;
+}
+
+.content {
+ padding-bottom: 12px;
+ padding-top: 3px;
+ text-overflow: ellipsis;
+}
+
+.comment {
+ border-bottom: 1px dotted #CCC;
+ border-left: 1px solid transparent;
+ vertical-align: top;
+ margin-bottom: -1px;
+ padding: 7px 8px 7px 47px;
+ clear: both;
+}
+
+.comment .prof_img {
+ float: left;
+ height: 32px;
+ margin-left: -40px;
+ width: 32px;
+}
+
+#next {
+ font-weight: bold;
+ color: #36C;
+ background-color: #FAFAFA;
+ border: 1px solid #E3E3E3;
+ cursor: pointer;
+ display: block;
+ padding: 10px 0;
+ text-align: center;
+}
+
