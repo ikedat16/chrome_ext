@@ -19,6 +19,10 @@ window.onload = function(){
 		var id = tab.url.match(/https:\/\/plus.google.com.*\/(\d{10,})\/.*/);
 		if (id) {
 			document.getElementById("user_id").value = id[1];
+		} else {
+			chrome.tabs.sendRequest(tab.id, {cmd : 'getId'}, function(response) {
+				document.getElementById("user_id").value = response.id;
+			});
 		}
 	});
-}
+};
