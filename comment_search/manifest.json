@@ -1,8 +1,11 @@
 {
   "name": "Google+ Comment Search",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "manifest_version": 2,
   "description": "search comments which the specified user contributed on Google+.",
-  "background_page": "background.html",
+  "background": {
+    "page": "background.html"
+  },
   "permissions": [
     "tabs",
     "background"
@@ -12,6 +15,7 @@
     "default_title": "Do action",
     "default_popup": "popup.html"
   },
+  "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'",
   "content_scripts": [
     {
       "matches": ["https://plus.google.com/*"],

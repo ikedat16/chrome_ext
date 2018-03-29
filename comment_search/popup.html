@@ -1,35 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<script type="text/javascript">
-var bg = chrome.extension.getBackgroundPage();
-
-function search(){
-	console.log('click! search.');
-	bg.createTab(document.getElementById("user_id").value);
-}
-
-function highlite(){
-	console.log("click highlight");
-	bg.highlite(document.getElementById("user_id").value);
-}
-
-function load() {
-    document.getElementById("search").addEventListener("click", search, false);
-	
-    document.getElementById("highlight").addEventListener("click", highlite, false);
-
-	chrome.tabs.getSelected(null, function(tab) {
-		var id = tab.url.match(/https:\/\/plus.google.com.*\/(\d{10,})\/.*/);
-		if (id) {
-			document.getElementById("user_id").value = id[1];
-		}
-	});
-}
-
-</script>
+<script type="text/javascript" src="popup.js"></script>
 </head>
-<body onload="load()">
+<body>
 
 <div id="in_id">
   <label for="user_id">user id:</label>

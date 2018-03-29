@@ -4,24 +4,7 @@
 <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="farbtastic/farbtastic.js"></script>
 <link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
-<script type="text/javascript">
-$(function(){
-	var bg = chrome.extension.getBackgroundPage();
-
-	$("#apikey").val(bg.getApikey());
-	$("#language").val(bg.getBrowserLang());
-	$("#color").val(bg.getUserBgColor());
-	
-	$('#colorpicker').farbtastic('#color');
-
-	$("#save").click(function() {
-		localStorage["apikey"] = $("#apikey").val();
-		localStorage["language"] = $("#language").val();
-		localStorage["user_bg_color"] = $("#color").val();
-	});
-
-});
-</script>
+<script type="text/javascript" src="options.js"></script>
 <style>
 body {
  font: normal 13px arial,sans-serif;
@@ -45,7 +28,7 @@ fieldset {
 		<legend>&nbsp;search&nbsp;</legend>
 		<label for="apikey">API keyÅF</label>
 		<input type="text" id="apikey" name="API key" size="30" />
-		<a href="https://code.google.com/apis/console/#:quotas" target="_blank">create API key</a>&nbsp;(reflection of change needs to be OS rebooted.)
+		<a href="https://code.google.com/apis/console/#:quotas" target="_blank">create API key</a>&nbsp;(reflection of change needs to be browser rebooted.)
 		<br />
 		<label for="language">language codesÅF</label>
 		<input type="text" id="language" name="language codes" size="6" />
